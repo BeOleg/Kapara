@@ -1,9 +1,12 @@
-var should = require('should');
-var io = require('socket.io-client'),
-    server = require('socket.io').listen(5000),
+'use strict';
+
+var should = require('should'),
+    testPort = 5000,
+    io = require('socket.io-client'),
+    server = require('socket.io').listen(testPort),
     base = require('../sockets/base');
 
-var socketURL = 'http://0.0.0.0:5000';
+var socketURL = 'http://0.0.0.0:' + testPort;
 
 var options ={
     transports: ['websocket'],
