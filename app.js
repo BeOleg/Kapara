@@ -6,7 +6,7 @@ var express = require('express'),
     http = require('http'),
     app = express(),
     server = http.createServer(app),
-    io = io.listen(server),
+    ioInstance = io.listen(server),
     path = require('path'),
     favicon = require('static-favicon'),
     logger = require('morgan'),
@@ -17,13 +17,13 @@ var express = require('express'),
 require('./routes/api')(app);
 
 // set up our socket server
-require('./sockets/base')(io);
+require('./sockets/base')(ioInstance);
 
 // start the server
 server.listen(3000);
 
 // optional - set socket.io logging level
-io.set('log level', 1000);
+ioInstance.set('log level', 1000);
 
 // view engine setup (for later)
 app.set('views', path.join(__dirname, 'views'));
@@ -37,11 +37,10 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 
-// for dev
-app.use(express.static(__dirname +  '/angular-frontend/app/'));
-
 if (app.get('env') === 'production') {
     app.use(express.static(__dirname +  '/public'));
+} else {
+    app.use(express.static(__dirname +  '/angular-frontend/app/'));
 }
 
 /// catch 404 and forwarding to error handler
@@ -74,6 +73,5 @@ app.use(function (err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
