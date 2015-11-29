@@ -21,34 +21,8 @@
 <body ng-app="chatApp">
 <h1>Angular Chatter</h1>
 
-<div class='container'>
-  <div ng-controller='SocketCtrl'>
-    You are known as: <span ng-bind="nickName"></span>.<br/>Change your nickname with <code>/nick [yourNewNick]</code>
-    <div class='row'>
-      <div class='col-md-9'>
-        <chat-box></chat-box>
-      </div>
-    </div>
-    <div class='row'>
-      &nbsp;
-    </div>
-    <div class='row'>
-      <div class='col-md-8'>
-        <form role='form' novalidate name='form'>
-          <div class='form-group'>
-            <input type='text' style='width: 80%'
-            required
-            ng-max='50'
-            ng-model='message'
-            focus>
-            <button class='btn btn-sm btn-primary'
-              ng-enable='form.$valid'
-              ng-click="sendMessage(message)">Send!</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<div class='container' ui-view>
+
 </div>
 <hr/>
 
@@ -64,7 +38,7 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/angular-socket-io/socket.js"></script>
 <!-- endbower -->
 <!-- endbuild -->

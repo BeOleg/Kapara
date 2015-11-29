@@ -13,7 +13,8 @@
     "angular-route": "1.2.15",
     "socket.io-client": "~0.9.16",
     "angular-socket-io": "~0.4.1",
-    "socket.io": "~0.9.15"
+    "socket.io": "~0.9.15",
+    "angular-ui-router": "~0.2.15"
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",
