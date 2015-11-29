@@ -24,7 +24,6 @@ module.exports = function (grunt) {
       app: require('./bower.json').appPath || 'app',
       dist: '../public/'
     },
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -43,8 +42,8 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+        tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -338,6 +337,16 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+    sass: {                              // Task
+      dist: {                            // Target
+          options: {                       // Target options
+              style: 'expanded'
+          },
+          files: {                         // Dictionary of files
+              '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss',       // 'destination': 'source'
+          }
+      }
     }
   });
 
@@ -346,10 +355,12 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.task.run([
       'clean:server',
       'bowerInstall',
+      'sass',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -380,6 +391,7 @@ module.exports = function (grunt) {
     'ngmin',
     'copy:dist',
     'cdnify',
+    'sass',
     'cssmin',
     'uglify',
     'rev',

@@ -15,6 +15,10 @@ module.exports = function (io) {
       });
       console.log('broadcast complete');
     });
+
+      socket.on('disconnect', function(){
+        //clean up
+      })
   });
 };
 
