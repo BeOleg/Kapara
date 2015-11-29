@@ -1,7 +1,19 @@
+'use strict';
+
 module.exports = function (io) {
-  'use strict';
+  var clients = {};
+
   io.on('connection', function (socket) {
     socket.broadcast.emit('user connected');
+      var userName;
+      socket.on('connection name',function(user){
+          userName = user.name;
+          if (user.oldName && clients[user.oldName]) {
+              delete clients[user.oldName];
+          }
+          clients[user.name] = socket;
+          io.sockets.emit('new user', user.name + " has joined.");
+      });
 
     socket.on('message', function (from, msg) {
 
@@ -16,9 +28,15 @@ module.exports = function (io) {
       console.log('broadcast complete');
     });
 
+
+      socket.on('private message', function(msg){
+          var fromMsg = {from:userName, txt:msg.txt};
+          clients[msg.to].emit('private message', fromMsg);
+      });
+
       socket.on('disconnect', function(){
-        //clean up
-      })
+          delete clients[userName];
+      });
   });
 };
 
