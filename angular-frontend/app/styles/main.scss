@@ -8,8 +8,15 @@ $lemon: #E7E27D;
 $neon: #ebe70d;
 $pageBG:#B8DEC5;
 $blue: #8EB0CC;
+$gray-light:#f7f7f7;
 
 $border-color:#dadada;
+
+/* --- [] --- */
+$font-size-small: 12px;
+$font-size-normal: 16px;
+$font-size-large: 24px;
+
 
 body, html {
     padding: 0px;
@@ -68,6 +75,15 @@ body, html {
 
 .kaparaChat {
     border:1px solid $border-color;
+    background-color:$gray-light;
+    padding:20px;
+    font-size:$font-size-large;
+    .bot {
+        color:$black;
+    }
+    .human {
+        color:$blue;
+    }
 }
 
 

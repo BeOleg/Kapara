@@ -9,5 +9,5 @@
  */
 angular.module('chatApp')
   .controller('HomeCtrl', function ($scope) {
- 
+
   });

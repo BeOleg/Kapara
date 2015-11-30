@@ -2,8 +2,11 @@
 
 angular.module('chatApp')
 .controller('SocketCtrl', function ($log, $scope, chatSocket, messageFormatter, nickName) {
-  $scope.nickName = nickName;
-  $scope.messageLog = 'Ready to chat!';
+  $scope.nickName   = nickName;
+  $scope.messageLog = "Kapara: Hi, I'm Kapara. Whats your name?";
+  $scope.chatLog    = [];
+  $scope.chatLog.push({ nickname:"Kapara", message: "Kapara: Hi, I'm Kapara. Whats your name?", bot:true });
+
   $scope.sendMessage = function() {
     var match = $scope.message.match('^\/nick (.*)');
 
@@ -19,6 +22,7 @@ angular.module('chatApp')
 
     $log.debug('sending message', $scope.message);
     chatSocket.emit('message', nickName, $scope.message);
+    $scope.chatLog.push({ nickname:nickName, message: $scope.message });
     $scope.message = '';
   };
 
