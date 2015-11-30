@@ -9,9 +9,7 @@
  */
 angular.module('appApp')
   .controller('ChatflowCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+        this.currentState = 0;
+        this.payload = {};
+        this.next = function() {}
   });
