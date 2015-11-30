@@ -1,0 +1,28 @@
+<div ng-include src="'views/navbar.html'"></div>
+
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="kaparaChat">
+            <chat-box></chat-box>
+            <div>
+                <form role='form' novalidate name='form'>
+                    <div class="input-group">
+                        <input type='text' class="form-control"
+                               required
+                               ng-max='50'
+                               ng-model='message'
+                               focus>
+                            <span class="input-group-btn">
+                                <button class='btn btn-primary'
+                                        ng-enable='form.$valid'
+                                        ng-click="sendMessage(message)">Send!
+                                </button>
+                            </span>
+                    </div><!-- /input-group -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,139 @@
-body {
-  margin: 0;
-  padding: 23px;
+
+/*--- brand colors ---*/
+$white: #ffffff;
+$red: #F20034;
+$black: #333333;
+$grey: #cccccc;
+$lemon: #E7E27D;
+$neon: #ebe70d;
+$pageBG:#B8DEC5;
+$blue: #8EB0CC;
+
+$border-color:#dadada;
+
+body, html {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.navbar-default {
+    background: $white;
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    padding:20px 40px;
+    position: relative;
+    z-index: 2;
+    .navbar-nav {
+        li {
+            a {
+                &.startBtn {
+
+                }
+            }
+        }
+    }
+}
+
+.bgImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.homepage {
+    position: relative;
+    z-index: 2;
+    .mainBox {
+
+        padding:100px 0px;
+
+        h1 {
+            text-align:center;
+            font-weight: bold;
+        }
+        h2 {
+            text-align:center;
+        }
+        .actionButtonWrapper {
+            text-align: center;
+            padding:40px 0px;
+        }
+    }
+}
+
+.kaparaChat {
+    border:1px solid $border-color;
+}
+
+
+
+/* ANIMATIONS */
+
+@-webkit-keyframes blink-it {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink-it {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blink-it {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink-it {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    -webkit-animation: blink-it steps(1) 1s infinite;
+    -moz-animation: blink-it steps(1) 1s infinite;
+    -ms-animation: blink-it steps(1) 1s infinite;
+    -o-animation: blink-it steps(1) 1s infinite;
+    animation: blink-it steps(1) 1s infinite;
 }

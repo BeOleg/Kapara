@@ -16,13 +16,11 @@ angular
             .state('home', {
                 url: "",
                 templateUrl: "views/home.html",
+                controller: 'HomeCtrl'
+            })
+            .state('start', {
+                url: "/start",
+                templateUrl: "views/start.html",
                 controller: 'SocketCtrl'
             })
-            .state('home.list', {
-                url: "/list",
-                templateUrl: "partials/state1.list.html",
-                controller: function($scope) {
-                    $scope.items = ["A", "List", "Of", "Items"];
-                }
-            });
     });
