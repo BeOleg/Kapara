@@ -1,0 +1,53 @@
+{
+  "steps":
+          [
+            {
+              "name": "name",
+              "question": "Hi! I am Kapara, what's your name?",
+              "answers": {
+                "success": [
+                    "Oh! that's a beautiful name",
+                    "That sounds %nationality%, are you from %country%?"
+                  ],
+                "failure": [
+                   "Oh... what kind of name is that?!",
+                   "God have mercy!"
+                ],
+                "retry": [
+                   "don't be shy, try again!",
+                   "We cannot be friends if you keep trolling..."
+                ]
+              }
+            },
+            {
+              "name": "email",
+              "question": "What is your email, so we can stay in touch?",
+              "answers": [
+                "Thanks, I'll let you know once I'm around ;)",
+                "Noted!"
+              ],
+              "failure": [
+                "Come on! I though we were friends",
+                "Don't worry... I won't bug you"
+              ],
+              "retry": [
+                "try again, you might miss some valuable information"
+              ]
+            },
+            {
+              "name": "company",
+              "question": "What do you do for leaving? at which company? (you don't have to answer that now, we can discuss it over a virtual beer once I am out)",
+              "answers": [
+                "Thanks, I'll let you know once I'm around ;)",
+                "Noted!"
+              ],
+              "failure": [
+                "Oh crap... wouldn't like to work from something with that name",
+                "We will not tell anyone, be more open minded!"
+              ],
+              "retry": [
+                "try again, but if you don't want, that's fine ;)"
+              ]
+            }
+          ]
+}
