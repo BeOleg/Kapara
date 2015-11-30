@@ -21,6 +21,6 @@ angular
             .state('start', {
                 url: "/start",
                 templateUrl: "views/start.html",
-                controller: 'SocketCtrl'
+                controller: 'StartCtrl'
             })
     });

@@ -2,12 +2,19 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <div class="kaparaChat">
+        <div class="kaparaChat" ng-controller="SocketCtrl">
             <!--<chat-box></chat-box> //-->
             <div class="chatLog">
-                <ul>
-                    <li ng-repeat="item in chatLog" ng-class="{'bot':item.bot, 'human':!item.bot}">
-                        {{ item.nickName }} {{ item.message }}
+                <ul class="media-list">
+                    <li class="media" ng-repeat="item in chatLog" ng-class="{'bot':item.bot, 'human':!item.bot}">
+                        <div class="media-left pull-left">
+                            <img class="media-object" src="images/kapara-avatar.png" alt="kapara ai" ng-if="item.bot">
+                            <img class="media-object" src="images/user-avatar.png" alt="kapara ai" ng-if="!item.bot">
+                        </div>
+                        <div class="media-body">
+                            <span class="nickname">{{ item.nickName }}</span>
+                            {{ item.message }}
+                        </div>
                     </li>
                 </ul>
             </div>

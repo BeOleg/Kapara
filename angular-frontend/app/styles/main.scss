@@ -92,6 +92,9 @@ body, html {
         min-height:250px;
         li {
             padding:0px 10px;
+            .media-object {
+                max-width:30px;
+            }
             &.bot {
                 color:#999;
                 font-weight:$font-weight-bold;

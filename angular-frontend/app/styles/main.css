@@ -60,6 +60,9 @@ body, html {
 .kaparaChat ul li {
   padding: 0px 10px;
 }
+.kaparaChat ul li .media-object {
+  max-width: 30px;
+}
 .kaparaChat ul li.bot {
   color: #999;
   font-weight: 600;
