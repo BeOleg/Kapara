@@ -1,14 +1,16 @@
 'use strict';
 
 angular
-  .module('chatApp', [
+    .module('chatApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'btford.socket-io',
     'ui.router'
-  ])
-  .value('nickName', 'anonymous')
+    ])
+    .value('nickName', 'anonymous')
+    .value('LANG', 'en')
+    .value('CHAT_FIXTURES_PATH', '')
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
