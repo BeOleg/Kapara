@@ -108,7 +108,6 @@ describe("Chat Server", function() {
 
                 client3.on('connect', function(data){
                     client2.send(nickForClient2, message);
-                    console.log(clients);
                 });
             });
         });
@@ -127,6 +126,7 @@ describe("Chat Server", function() {
             client3.disconnect();
             done();
         };
+        
 
         var checkPrivateMessage = function(client){
             client.on('private message', function(msg){
