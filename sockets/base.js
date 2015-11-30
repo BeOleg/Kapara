@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (io) {
+ var handleSocket = function handleSocket (io) {
   var clients = {};
 
   io.on('connection', function (socket) {
@@ -9,6 +9,8 @@ module.exports = function (io) {
       socket.on('connection name',function(user){
           userName = user.name;
           if (user.oldName && clients[user.oldName]) {
+              console.log('heere \n');
+
               delete clients[user.oldName];
           }
           clients[user.name] = socket;
@@ -38,5 +40,9 @@ module.exports = function (io) {
           delete clients[userName];
       });
   });
+
+  return clients;
 };
+
+module.exports = handleSocket;
 

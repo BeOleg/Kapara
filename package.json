@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha -R spec"
+    "test": "gulp test"
   },
   "directories": {
     "test": "test"
@@ -23,6 +23,10 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "gulp": "^3.9.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.2.0",
+    "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
     "should": "^4.6.0",
     "sinon": "^1.17.2",
