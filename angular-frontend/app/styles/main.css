@@ -1,5 +1,6 @@
 /*--- brand colors ---*/
-/* --- [] --- */
+/* --- font sizes --- */
+/* --- font weights --- */
 body, html {
   padding: 0px;
   margin: 0px;
@@ -47,12 +48,23 @@ body, html {
   border: 1px solid #dadada;
   background-color: #f7f7f7;
   padding: 20px;
-  font-size: 24px;
+  font-size: 18px;
 }
-.kaparaChat .bot {
-  color: #333333;
+.kaparaChat ul {
+  background-color: #ffffff;
+  list-style-type: none;
+  margin: 0px;
+  padding: 20px;
+  min-height: 250px;
 }
-.kaparaChat .human {
+.kaparaChat ul li {
+  padding: 0px 10px;
+}
+.kaparaChat ul li.bot {
+  color: #999;
+  font-weight: 600;
+}
+.kaparaChat ul li.human {
   color: #8EB0CC;
 }
 
