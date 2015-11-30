@@ -10,7 +10,8 @@ angular
     ])
     .value('nickName', 'anonymous')
     .value('LANG', 'en')
-    .value('CHAT_FIXTURES_PATH', '')
+    .value('CHAT_FIXTURES_PATH', 'fixtures/chat')
+    .value('FIXTURE_EXTENSION', '.json')
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
