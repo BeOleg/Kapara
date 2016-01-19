@@ -22,14 +22,14 @@ var chatUser1 = {'name': 'Tom'},
 describe("Chat Server", function() {
 
     /* Test 1 - A Single User */
-    it('Should broadcast new user once they connect', function (done){
+    it('Should broadcast new user once they connect', function (done) {
         var client = io.connect(socketURL, options);
 
-        client.on('connect', function(data){
+        client.on('connect', function(data) {
             client.emit('connection name', chatUser1);
         });
 
-        client.on('new user', function(usersName){
+        client.on('new user', function(usersName) {
             usersName.should.be.type('string');
             usersName.should.equal(chatUser1.name + " has joined.");
             /* If this client doesn't disconnect it will interfere
@@ -126,7 +126,7 @@ describe("Chat Server", function() {
             client3.disconnect();
             done();
         };
-        
+
 
         var checkPrivateMessage = function(client){
             client.on('private message', function(msg){
